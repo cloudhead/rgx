@@ -1,0 +1,26 @@
+[package]
+name = "rgx"
+description = "A 2D graphics toolkit for rust"
+version = "0.9.0"
+license = "MIT"
+authors = ["Alexis Sellier <hi@cloudhead.io>"]
+edition = "2021"
+
+[features]
+default = ["glfw", "glfw/glfw-sys", "logger"]
+wayland = ["glfw", "glfw/glfw-sys", "glfw/wayland"]
+logger = ["termcolor"]
+
+[dependencies]
+gl = { version = "0.14.0" }
+glfw = { version = "0.52.0", default-features = false, optional = true }
+log = { version = "0.4.17", features = ["std"] }
+luminance = { version = "0.47.0" }
+luminance-derive = { version = "0.10.0" }
+luminance-gl = { version = "0.19.1" }
+nonempty = { version = "0.8.1" }
+termcolor = { version = "1.2.0", optional = true }
+thiserror = { version = "1.0.40" }
+
+[dev-dependencies]
+anyhow = { version = "1.0.0" }
